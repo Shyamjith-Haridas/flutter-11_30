@@ -1,0 +1,39 @@
+ Container(
+          height: 500,
+          width: 400,
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: Colors.grey.shade300,
+
+            borderRadius: BorderRadius.circular(20),
+            // border: Border.all(
+            //   color: Colors.black,
+            //   width: 5.0,
+            // ),
+            // shape: BoxShape.circle,
+
+            // image: DecorationImage(
+            //   image: AssetImage("assets/images/nature1.jpg"),
+            //   fit: BoxFit.cover,
+            // ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black,
+                offset: Offset(6, 8),
+                blurRadius: 1,
+                spreadRadius: 2.0,
+              ),
+              BoxShadow(
+                color: Colors.red,
+                offset: Offset(4, 6),
+                blurRadius: 1,
+                spreadRadius: 2.0,
+              ),
+            ],
+          ),
+          child: Text(
+            "NATURE",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
