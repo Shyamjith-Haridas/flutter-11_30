@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:january_last/stack_widget.dart';
 import 'package:january_last/widgets/car_container.dart';
 import 'package:january_last/widgets/highlited_container.dart';
 import 'package:january_last/widgets/post_section.dart';
 
 class SocialMediaProfile extends StatelessWidget {
   const SocialMediaProfile({super.key});
+
+  void nextPage(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => const StackExample(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -275,7 +284,33 @@ class SocialMediaProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const StackExample(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 70,
+                    alignment: const Alignment(0, 0),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text(
+                      "Next Page",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
