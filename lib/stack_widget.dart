@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:january_last/grid_view.dart';
+import 'package:january_last/listview_example.dart';
 
 class StackExample extends StatelessWidget {
   const StackExample({super.key});
@@ -50,20 +49,30 @@ class StackExample extends StatelessWidget {
                   Positioned(
                     bottom: 40,
                     left: 200,
-                    child: Container(
-                      height: 50,
-                      width: 110,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Text(
-                        "Follow",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const GridViewExample(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 110,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          "Follow",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
@@ -71,16 +80,26 @@ class StackExample extends StatelessWidget {
                   Positioned(
                     bottom: 40,
                     right: 20,
-                    child: Container(
-                      height: 50,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Icon(
-                        Icons.mail_outlined,
-                        size: 34,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (ctx) => const ListViewScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 70,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade300,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(
+                          Icons.mail_outlined,
+                          size: 34,
+                        ),
                       ),
                     ),
                   ),
